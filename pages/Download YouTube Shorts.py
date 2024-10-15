@@ -18,7 +18,7 @@ allres = []
 if video_url:
     try:
         # Fetch YouTube video object
-        yt = YouTube(video_url, on_progress_callback=on_progress,use_po_token= True, po_token_verifier=['apurba','1234'])
+        yt = YouTube(video_url, on_progress_callback=on_progress,use_po_token= True, po_token_verifier=('apurba','1234'))
         col1,col2= st.columns(2)
         with col1:
             st.image(yt.thumbnail_url)
