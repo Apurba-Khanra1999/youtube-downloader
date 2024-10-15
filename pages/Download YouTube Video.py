@@ -8,6 +8,10 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
+
+visitor_data = "apurba"  # Replace with your actual visitor data
+po_token = "1234"        # Replace with your actual po_token
+
 # Title of the app
 st.html('<h1 style="text-align:center;color:#ff0000;">Youtube ▶ Video Downloader</h1>')
 
@@ -18,7 +22,7 @@ allres = []
 if video_url:
     try:
         # Fetch YouTube video object
-        yt = YouTube(video_url, on_progress_callback=on_progress)
+        yt = YouTube(video_url, on_progress_callback=on_progress, allow_oauth_cache=True)
         col1,col2= st.columns(2)
         with col1:
             st.image(yt.thumbnail_url)
